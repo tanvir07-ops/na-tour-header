@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  padding: 30px;
+  line-height: 1.7;
+}
+
+.header {
+  background: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.7),
+      hsla(160, 64%, 43%, 0.7)
+    ),
+    url(img/hero.jpg) no-repeat center center/cover;
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 70vh);
+
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.primary-heading {
+  color: #ddd !important;
+}
+
+.primary-heading-main {
+  display: block;
+  font-weight: 400;
+  font-size: 40px;
+  letter-spacing: 35px;
+  text-transform: uppercase;
+  animation: moveInLeft 1.5s ease-in-out;
+}
+
+.primary-heading-sub {
+  display: block;
+  letter-spacing: 18.5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  animation: moveInRight 1.5s ease-in-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBtn {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn-visited {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 100px;
+  margin-top: 50px;
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 100px;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: white;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBtn 0.5s ease-in-out 0.75s;
+  animation-fill-mode: backwards;
+}
